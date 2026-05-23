@@ -10,17 +10,6 @@
   <img src="https://img.shields.io/badge/Prisma-6.x-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma">
 </div>
 
-<p align="center">
-  <strong>A premium, full-stack college search, discovery, and comparison platform helping students find and compare world-class universities.</strong>
-  <br />
-  <br />
-  <a href="http://localhost:3000"><strong>Local Site »</strong></a>
-  ·
-  <a href="#-getting-started">Explore the Docs</a>
-  ·
-  <a href="https://github.com/VIJAYAPANDIANT/College-Discovery-Platform/issues">Report Bug</a>
-</p>
-
 ---
 
 ## 📋 Table of Contents
