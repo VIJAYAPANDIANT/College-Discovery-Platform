@@ -4,13 +4,22 @@
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
   <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="Maintained">
   <img src="https://img.shields.io/github/license/VIJAYAPANDIANT/College-Discovery-Platform?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
   <img src="https://img.shields.io/badge/Next.js-16.x-blue?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/React-19.x-20232a?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
   <img src="https://img.shields.io/badge/PostgreSQL-18.x-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/Prisma-6.x-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma">
 </div>
 
-**UniScope** is a premium full-stack college discovery and comparison platform that helps students search, explore, compare, and analyze universities using smart filters, reviews, rankings, tuition insights, and personalized decision-making tools for better academic choices.
+<p align="center">
+  <strong>A premium, full-stack college search, discovery, and comparison platform helping students find and compare world-class universities.</strong>
+  <br />
+  <br />
+  <a href="https://college-discovery-platform-mfqh.vercel.app/"><strong>Live Frontend Website »</strong></a>
+  ·
+  <a href="https://college-discovery-platform-nkvs.vercel.app/api/colleges"><strong>Live Backend API »</strong></a>
+  ·
+  <a href="http://localhost:3000">Local Site</a>
+</p>
 
 ---
 
@@ -106,11 +115,12 @@ College-Discovery-Platform/
 │   ├── prisma/         # Relational database schemas & seed script
 │   └── lib/            # Prisma Client singleton instantiation
 ├── backend/            # Next.js API Server
-│   ├── prisma/         # Backend schema & seed configuration
+│   ├── proxy.ts        # Next.js 16 Edge proxy for CORS headers
+│   ├── prisma/         # Backend schema configuration
 │   ├── services/       # Core business logic layer
-│   └── app/api/        # Express-like REST API router
+│   └── app/api/        # REST API router
 ├── frontend/           # Next.js React Client
-│   ├── app/            # Main application pages (Colleges, Compare, Saved)
+│   ├── app/            # Main application pages (Colleges, Compare, Privacy, Terms, Contact)
 │   ├── components/     # Reusable UI cards, tables, search panels
 │   └── lib/            # Local data mocks and client logic
 └── README.md           # Project documentation
@@ -162,6 +172,20 @@ College-Discovery-Platform/
    npm run dev -- --webpack
    ```
    Access the application at `http://localhost:3000`.
+
+### 🌐 Deploying to Vercel
+
+You can deploy both frontend and backend subprojects independently to Vercel:
+
+1. **Frontend Deployment (`frontend/` as root):**
+   - In your Vercel project settings, set the **Root Directory** to `frontend`.
+   - Add the Environment Variable:
+     - `NEXT_PUBLIC_API_URL` = `https://your-backend-vercel-url.app/api`
+
+2. **Backend Deployment (`backend/` as root):**
+   - In your Vercel project settings, set the **Root Directory** to `backend`.
+   - Add the Environment Variable:
+     - `DATABASE_URL` = `postgresql://username:password@hostname:port/db_name?schema=public` *(Your hosted cloud PostgreSQL database connection string)*
 
 ---
 
