@@ -7,3 +7,4 @@ export async function GET(
   const { slug } = await params;
   return NextResponse.json({ message: `Hello ${slug}!` });
 }
+
