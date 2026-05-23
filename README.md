@@ -210,8 +210,8 @@ You can deploy both frontend and backend subprojects independently to Vercel:
 
 Created by **Vijayapandian T**
 
-- **LinkedIn:** [vijayapandian-t](http://www.linkedin.com/in/vijayapandian-t)
-- **GitHub:** [@VIJAYAPANDIANT](https://github.com/VIJAYAPANDIANT)
+- **LinkedIn:** [Vijayapandian T](http://www.linkedin.com/in/vijayapandian-t)
+- **GitHub:** [Vijayapandian T](https://github.com/VIJAYAPANDIANT)
 - **Email:** [vijayapandian112007@gmail.com](mailto:vijayapandian112007@gmail.com)
 
 ---
