@@ -24,6 +24,7 @@ export const authService = {
         name,
         email: email.toLowerCase(),
         password: hashedPassword,
+        passwordHash: hashedPassword,
       },
       select: {
         id: true,
