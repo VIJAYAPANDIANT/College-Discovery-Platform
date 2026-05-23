@@ -31,22 +31,6 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                if (localStorage.getItem("colleges_data_fixed_v1") !== "true") {
-                  localStorage.removeItem("colleges_data");
-                  localStorage.setItem("colleges_data_fixed_v1", "true");
-                }
-              } catch (e) {
-                console.error("Local storage cache clear failed:", e);
-              }
-            `,
-          }}
-        />
-      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
         <Providers>
           <Navbar />

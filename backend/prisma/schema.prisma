@@ -8,68 +8,81 @@ generator client {
 }
 
 model User {
-  id             String         @id @default(cuid())
-  name           String?
-  email          String         @unique
-  password       String
-  createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
-  savedColleges  SavedCollege[]
-  reviews        Review[]
+  id            String         @id @default(cuid())
+  name          String?
+  email         String         @unique
+  password      String         // backend requirement
+  passwordHash  String         // database requirement
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  savedColleges SavedCollege[]
+  reviews       Review[]
 }
 
 model College {
   id             String         @id
   name           String
-  logo           String
-  bannerImage    String
   location       String
+  fees           Float          // database requirement
+  feesPerYear    Float          // backend requirement
   rating         Float
+  overview       String         @db.Text // database requirement
+  description    String         @db.Text // backend requirement
+  placementRate  Float
+  image          String         // database requirement
+  logo           String         // backend requirement
+  bannerImage    String         // backend requirement
   reviewsCount   Int            @default(0)
-  feesPerYear    Float
   type           String         // "Public" | "Private"
   established    Int
-  placementRate  Float
   avgPackage     Float
-  description    String         @db.Text
   website        String
   rank           Int
   featured       Boolean        @default(false)
   amenities      String[]
+  createdAt      DateTime       @default(now())
   courses        Course[]
   reviews        Review[]
   savedBy        SavedCollege[]
 }
 
-
 model Course {
-  id             String         @id @default(cuid())
-  name           String
-  duration       String
-  fees           Float
-  collegeId      String
-  college        College        @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+  id         String   @id @default(cuid())
+  collegeId  String
+  courseName String   // database requirement
+  name       String   // backend requirement
+  duration   String
+  fees       Float    // backend requirement
+  college    College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+
+  @@index([collegeId])
 }
 
 model Review {
-  id             String         @id @default(cuid())
-  userName       String
-  rating         Int
-  comment        String         @db.Text
-  date           String         // format: YYYY-MM-DD
-  collegeId      String
-  college        College        @relation(fields: [collegeId], references: [id], onDelete: Cascade)
-  userId         String?
-  user           User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+  id        String   @id @default(cuid())
+  userId    String?  // database requirement (made optional to support backend)
+  collegeId String
+  rating    Int
+  comment   String   @db.Text
+  createdAt DateTime @default(now())
+  userName  String   // backend requirement
+  date      String   // backend requirement (format: YYYY-MM-DD)
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  college   College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([collegeId])
 }
 
 model SavedCollege {
-  id             String         @id @default(cuid())
-  userId         String
-  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
-  collegeId      String
-  college        College        @relation(fields: [collegeId], references: [id], onDelete: Cascade)
-  createdAt      DateTime       @default(now())
+  id        String   @id @default(cuid())
+  userId    String
+  collegeId String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college   College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
 
   @@unique([userId, collegeId])
+  @@index([userId])
+  @@index([collegeId])
 }

@@ -1204,6 +1204,7 @@ async function main() {
     data: {
       name: "Alex Johnson",
       email: "alex@uniscope.com",
+      password: await bcrypt.hash("password123", 10),
       passwordHash: await bcrypt.hash("password123", 10),
     }
   });
@@ -1211,6 +1212,7 @@ async function main() {
     data: {
       name: "Samantha Lin",
       email: "samantha@uniscope.com",
+      password: await bcrypt.hash("password123", 10),
       passwordHash: await bcrypt.hash("password123", 10),
     }
   });
@@ -1218,6 +1220,7 @@ async function main() {
     data: {
       name: "Elena Rostova",
       email: "elena@uniscope.com",
+      password: await bcrypt.hash("password123", 10),
       passwordHash: await bcrypt.hash("password123", 10),
     }
   });
@@ -1225,6 +1228,7 @@ async function main() {
     data: {
       name: "Marcus Aurelius",
       email: "marcus@uniscope.com",
+      password: await bcrypt.hash("password123", 10),
       passwordHash: await bcrypt.hash("password123", 10),
     }
   });
@@ -1232,6 +1236,7 @@ async function main() {
     data: {
       name: "David Kim",
       email: "david@uniscope.com",
+      password: await bcrypt.hash("password123", 10),
       passwordHash: await bcrypt.hash("password123", 10),
     }
   });
@@ -1239,27 +1244,58 @@ async function main() {
 
   // Seed Colleges, Courses, and Reviews
   for (const col of MOCK_COLLEGES) {
+    // Determine mapping values for backend requirements if not present
+    const logo = col.logo || "https://images.unsplash.com/photo-1592066575517-58df903152f2?q=80&w=150&h=150&fit=crop";
+    const bannerImage = col.bannerImage || col.image;
+    const description = col.description || col.overview;
+    const feesPerYear = col.feesPerYear || col.fees;
+    const type = col.type || (["bits", "manipal", "vit"].includes(col.id) ? "Private" : "Public");
+    const established = col.established || 1950;
+    const avgPackage = col.avgPackage || (col.placementRate > 90 ? 22000 : 15000);
+    const rank = col.rank || 99;
+    const featured = col.featured || false;
+    const website = col.website || `https://www.${col.id}.edu`;
+    const amenities = col.amenities || ["Library", "Labs", "Gym", "Wifi"];
+
     await prisma.college.create({
       data: {
         id: col.id,
         name: col.name,
         location: col.location,
         fees: col.fees,
+        feesPerYear: feesPerYear,
         rating: col.rating,
         overview: col.overview,
+        description: description,
         placementRate: col.placementRate,
         image: col.image,
+        logo: logo,
+        bannerImage: bannerImage,
+        reviewsCount: col.reviews ? col.reviews.length : 0,
+        type: type,
+        established: established,
+        avgPackage: avgPackage,
+        website: website,
+        rank: rank,
+        featured: featured,
+        amenities: amenities,
         courses: {
-          create: col.courses,
+          create: col.courses.map(course => ({
+            courseName: course.courseName || course.name,
+            name: course.courseName || course.name,
+            duration: course.duration,
+            fees: course.fees || (feesPerYear / 4),
+          })),
         },
         reviews: {
           create: col.reviews.map((rev, index) => {
-            // Distribute reviews amongst seeded users
             const user = users[index % users.length];
             return {
               userId: user.id,
               rating: rev.rating,
               comment: rev.comment,
+              userName: user.name || "Student Alum",
+              date: "2026-04-15",
             };
           }),
         },

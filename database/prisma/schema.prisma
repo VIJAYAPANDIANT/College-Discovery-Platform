@@ -11,32 +11,48 @@ model User {
   id            String         @id @default(cuid())
   name          String?
   email         String         @unique
-  passwordHash  String
+  password      String         // backend requirement
+  passwordHash  String         // database requirement
   createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
   savedColleges SavedCollege[]
   reviews       Review[]
 }
 
 model College {
-  id            String         @id
-  name          String
-  location      String
-  fees          Float
-  rating        Float
-  overview      String         @db.Text
-  placementRate Float
-  image         String
-  createdAt     DateTime       @default(now())
-  courses       Course[]
-  reviews       Review[]
-  savedBy       SavedCollege[]
+  id             String         @id
+  name           String
+  location       String
+  fees           Float          // database requirement
+  feesPerYear    Float          // backend requirement
+  rating         Float
+  overview       String         @db.Text // database requirement
+  description    String         @db.Text // backend requirement
+  placementRate  Float
+  image          String         // database requirement
+  logo           String         // backend requirement
+  bannerImage    String         // backend requirement
+  reviewsCount   Int            @default(0)
+  type           String         // "Public" | "Private"
+  established    Int
+  avgPackage     Float
+  website        String
+  rank           Int
+  featured       Boolean        @default(false)
+  amenities      String[]
+  createdAt      DateTime       @default(now())
+  courses        Course[]
+  reviews        Review[]
+  savedBy        SavedCollege[]
 }
 
 model Course {
   id         String   @id @default(cuid())
   collegeId  String
-  courseName String
+  courseName String   // database requirement
+  name       String   // backend requirement
   duration   String
+  fees       Float    // backend requirement
   college    College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
 
   @@index([collegeId])
@@ -44,12 +60,14 @@ model Course {
 
 model Review {
   id        String   @id @default(cuid())
-  userId    String
+  userId    String?  // database requirement (made optional to support backend)
   collegeId String
   rating    Int
   comment   String   @db.Text
   createdAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userName  String   // backend requirement
+  date      String   // backend requirement (format: YYYY-MM-DD)
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
   college   College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
 
   @@index([userId])
@@ -60,6 +78,7 @@ model SavedCollege {
   id        String   @id @default(cuid())
   userId    String
   collegeId String
+  createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   college   College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
 
