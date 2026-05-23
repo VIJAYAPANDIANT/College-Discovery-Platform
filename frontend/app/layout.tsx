@@ -43,9 +43,9 @@ export default function RootLayout({
               <div className="font-semibold text-indigo-600 dark:text-indigo-400 text-lg">UniScope</div>
               <p>© {new Date().getFullYear()} UniScope. All rights reserved. Connecting students with their future.</p>
               <div className="flex gap-4 text-xs font-medium">
-                <a href="#" className="hover:underline">Privacy Policy</a>
-                <a href="#" className="hover:underline">Terms of Service</a>
-                <a href="#" className="hover:underline">Contact Support</a>
+                <a href="/privacy" className="hover:underline">Privacy Policy</a>
+                <a href="/terms" className="hover:underline">Terms of Service</a>
+                <a href="/contact" className="hover:underline">Contact Support</a>
               </div>
             </div>
           </footer>
