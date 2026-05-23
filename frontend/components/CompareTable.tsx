@@ -128,7 +128,7 @@ export default function CompareTable({ colleges, onRemove }: CompareTableProps) 
                   <div className="flex items-center gap-1.5">
                     <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                     <span>{c.rating} / 5</span>
-                    <span className="text-slate-400 text-xs font-normal">({c.reviewsCount} reviews)</span>
+                    <span className="text-slate-400 text-xs font-normal">({c.reviewsCount ?? c.reviews?.length ?? 0} reviews)</span>
                   </div>
                 </td>
               );

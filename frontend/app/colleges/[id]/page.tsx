@@ -165,7 +165,7 @@ export default function CollegeDetailPage({ params }: CollegeDetailPageProps) {
                   <div className="flex items-center gap-1">
                     <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                     <span className="font-bold text-white">{college.rating}</span>
-                    <span>({college.reviewsCount} reviews)</span>
+                    <span>({college.reviewsCount ?? college.reviews?.length ?? 0} reviews)</span>
                   </div>
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function CollegeDetailPage({ params }: CollegeDetailPageProps) {
             {[
               { id: "overview", label: "Overview", icon: BookOpen },
               { id: "courses", label: "Courses & Fees", icon: GraduationCap },
-              { id: "reviews", label: "Reviews", icon: MessageSquare, badge: college.reviewsCount },
+              { id: "reviews", label: "Reviews", icon: MessageSquare, badge: college.reviewsCount ?? college.reviews?.length ?? 0 },
             ].map((tab) => {
               const Icon = tab.icon;
               const isSelected = activeTab === tab.id;
@@ -307,7 +307,7 @@ export default function CollegeDetailPage({ params }: CollegeDetailPageProps) {
                         />
                       ))}
                     </div>
-                    <span className="text-xs text-slate-400">Based on {college.reviewsCount} reviews</span>
+                    <span className="text-xs text-slate-400">Based on {college.reviewsCount ?? college.reviews?.length ?? 0} reviews</span>
                   </div>
 
                   {/* Visual Bar Breakdown (Mock) */}

@@ -93,7 +93,7 @@ export default function CollegeCard({ college }: CollegeCardProps) {
           <div className="flex items-center gap-1">
             <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
             <span className="text-slate-700 dark:text-slate-300 font-bold">{college.rating}</span>
-            <span>({college.reviewsCount})</span>
+            <span>({college.reviewsCount ?? college.reviews?.length ?? 0})</span>
           </div>
         </div>
 

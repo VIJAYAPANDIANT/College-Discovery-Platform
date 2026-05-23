@@ -1,5 +1,5 @@
 export interface Review {
-  id: string;
+  id?: string;
   userName: string;
   rating: number;
   comment: string;
@@ -19,7 +19,7 @@ export interface College {
   bannerImage: string;
   location: string;
   rating: number;
-  reviewsCount: number;
+  reviewsCount?: number;
   feesPerYear: number;
   type: 'Public' | 'Private';
   established: number;
@@ -29,7 +29,7 @@ export interface College {
   courses: Course[];
   reviews: Review[];
   amenities: string[];
-  featured: boolean;
+  featured?: boolean;
   rank: number;
   website: string;
 }

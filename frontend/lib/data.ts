@@ -1,4 +1,6 @@
-export const MOCK_COLLEGES = [
+import { College } from "@/types";
+
+export const MOCK_COLLEGES: College[] = [
   {
     id: "mit",
     name: "Massachusetts Institute of Technology (MIT)",
