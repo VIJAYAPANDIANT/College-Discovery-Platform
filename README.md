@@ -10,6 +10,8 @@
   <img src="https://img.shields.io/badge/Prisma-6.x-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma">
 </div>
 
+**UniScope** is a premium full-stack college discovery and comparison platform that helps students search, explore, compare, and analyze universities using smart filters, reviews, rankings, tuition insights, and personalized decision-making tools for better academic choices.
+
 ---
 
 ## 📋 Table of Contents
