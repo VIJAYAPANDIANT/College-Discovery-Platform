@@ -1,154 +1,205 @@
-🎓 UniScope - College Discovery Platform
-Status Maintained License Node.js React Next.js Vercel
+# 🎓 UniScope - College Discovery & Comparison Platform
 
-A state-of-the-art, full-stack collegiate platform enabling students to search, compare, bookmark, and review universities worldwide.
+<div align="center">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="Maintained">
+  <img src="https://img.shields.io/github/license/VIJAYAPANDIANT/College-Discovery-Platform?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Next.js-16.x-blue?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/React-19.x-20232a?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/PostgreSQL-18.x-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Prisma-6.x-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma">
+</div>
 
-Explore the Docs · Report Bug
+<p align="center">
+  <strong>A premium, full-stack college search, discovery, and comparison platform helping students find and compare world-class universities.</strong>
+  <br />
+  <br />
+  <a href="http://localhost:3000"><strong>Local Site »</strong></a>
+  ·
+  <a href="#-getting-started">Explore the Docs</a>
+  ·
+  <a href="https://github.com/VIJAYAPANDIANT/College-Discovery-Platform/issues">Report Bug</a>
+</p>
 
-📋 Table of Contents
-🔐 Demo Credentials
-📝 Overview
-🚀 Features
-👨🎓 Student Portal
-🏢 College Directory
-🔧 Administrator Dashboard
-🔄 User Workflow
-🛠️ Technical Stack
-📂 Project Structure
-🚦 Getting Started
-⚙️ Advanced Features
-🗺️ Roadmap
-👤 Contact
+---
 
-🔐 Demo Credentials
-For testing purposes, you can use the following credentials to access the user portal and bookmark/review features:
+## 📋 Table of Contents
+- [🔐 Demo Credentials](#-demo-credentials)
+- [📝 Overview](#-overview)
+- [🚀 Features](#-features)
+  - [🔍 College Discovery](#-college-discovery)
+  - [📊 Comparison Engine](#-comparison-engine)
+  - [💬 Student Review System](#-student-review-system)
+- [🔄 User Workflow](#-user-workflow)
+- [🛠️ Technical Stack](#-technical-stack)
+- [📂 Project Structure](#-project-structure)
+- [🚦 Getting Started](#-getting-started)
+- [⚙️ Advanced Features](#-advanced-features)
+- [🗺️ Roadmap](#-roadmap)
+- [👤 Contact](#-contact)
 
-Role	Email	Password
-Test User 1	alex@uniscope.com	password123
-Test User 2	samantha@uniscope.com	password123
-Test User 3	elena@uniscope.com	password123
-Test User 4	marcus@uniscope.com	password123
-Test User 5	david@uniscope.com	password123
+---
 
-📝 Overview
-UniScope is designed to simplify and enhance the process of choosing the perfect higher education institution. By combining an intuitive, modern user interface with a robust, relational PostgreSQL database, it allows students to seamlessly filter colleges, compare academic statistics side-by-side, read student reviews, and manage bookmarked schools.
+## 🔐 Demo Credentials
 
-Key Objectives:
-📊 Side-by-Side Comparison: Compare up to 3 colleges simultaneously across tuition fees, rankings, and placements.
-🎓 Student Reviews: Read authentic comments, ratings, and feedback shared by verified alumni.
-⚡ Performance & Cache: Webpack-powered frontend compiler with local storage database synchronization for zero-latency operations.
-💼 Career Insights: Explore graduation statistics, placement rates, and average salaries per campus.
+For testing purposes, the database contains 5 seeded test user accounts with pre-hashed credentials:
 
-🚀 Features
+| Role          | Email                  | Password      |
+| :------------ | :--------------------- | :------------ |
+| **Test User** | `alex@uniscope.com`    | `password123` |
+| **Test User** | `samantha@uniscope.com`| `password123` |
+| **Test User** | `elena@uniscope.com`   | `password123` |
+| **Test User** | `marcus@uniscope.com`  | `password123` |
+| **Test User** | `david@uniscope.com`   | `password123` |
 
-👨🎓 Student Portal
-* **Personalized Dashboard**: Track bookmarked colleges and view submitted reviews.
-* **Responsive Comparison Drawer**: Dock selected universities at the bottom of the screen and trigger a dynamic comparison overlay with one click.
-* **Zustand State Management**: Smooth, instantaneous client-side updates for saves and reviews.
+---
 
-🏢 College Directory
-* **Multi-Criteria Filtering**: Filter by location, public/private status, annual tuition fees, and minimum user rating.
-* **Instant Search**: Search through 67 world-class universities in real-time.
-* **Detailed Campus Profiles**: In-depth overviews, lists of offered degrees, and statistics on student placement.
+## 📝 Overview
 
-🔧 Administrator Dashboard
-* **Content Management**: Database models supporting complete CRUD operations for colleges, courses, and reviews.
-* **Relational Database Integrations**: Robust foreign key constraints and cascade rules automatically cleaning reviews and courses on college updates.
+**UniScope** is designed to simplify the college selection process by providing detailed profile information for **67+ top-tier global universities**. It allows students to filter institutions by region, type, and tuition fees, compare statistics side-by-side, read student reviews, and bookmark choices.
 
-🔄 User Workflow
-1. **Authentication**: Log in with secure credentials to personalize your profile.
-2. **Browse & Search**: Filter colleges by location, tuition range, type, or ratings.
-3. **Compare**: Add up to 3 colleges to the Comparison Drawer to evaluate academic performance side-by-side.
-4. **Alumni Insights**: Read student reviews and check graduation packages.
-5. **Bookmark**: Save colleges to your personal board for easy access.
+### Key Objectives:
+- 🎓 **Information Rich:** Detailed college metrics including established year, average package, rank, and features.
+- ⚡ **Side-by-Side Comparison:** Compare up to 3 colleges across multiple criteria instantly.
+- 💬 **Authentic Feedback:** Structured review and rating system distributed among realistic alumni profiles.
 
-🛠️ Technical Stack
+---
 
-Frontend & UI
-* Next.js 16.2.6 (Webpack Compilation)
-* React 19
-* TailwindCSS
-* Zustand (State Management)
-* Lucide React (Icons)
+## 🚀 Features
 
-Backend & Database
-* Next.js API Routes (Turbopack Runner)
-* Node.js
-* PostgreSQL 18
-* Prisma ORM (Relational Mapping)
+### 🔍 College Discovery
+- **Comprehensive Profiles:** 67+ detailed world-class university profiles containing statistics, descriptions, courses, and ratings.
+- **Advanced Filtering:** Filter by location, public/private status, ratings, and custom tuition fee ranges.
+- **Dynamic Sorting:** Sort search results instantly by Rank, Rating, or Tuition Fees (ascending/descending).
 
-📂 Project Structure
+### 📊 Comparison Engine
+- **Multi-Selection:** Select and compare up to 3 colleges side-by-side.
+- **Detailed Comparison Matrix:** Compare tuition fees, average placement packages, established years, placement rates, ratings, and website links in a single interactive view.
+
+### 💬 Student Review System
+- **Distributed Feedback:** Pre-populated review sets providing qualitative student insights.
+- **Interactive Reviews:** Hashed user validation allows logged-in students to submit verified feedback.
+
+---
+
+## 🔄 User Workflow
+
+1.  **Search & Discovery:** Browse the full grid of colleges or search by name, region, or description.
+2.  **Filter & Sort:** Refine search results using the interactive sidebar metrics.
+3.  **Inspect Profile:** Click on any university card to view detailed overview, list of courses, and reviews.
+4.  **Compare:** Toggle checkboxes on multiple cards to view comparative statistics side-by-side.
+5.  **Bookmark:** Save interesting universities to personal lists (stored and validated locally).
+
+---
+
+## 🛠️ Technical Stack
+
+### Frontend & UI
+![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-4A154B?style=for-the-badge&logoColor=white)
+
+### Backend & Database
+![Next.js API](https://img.shields.io/badge/Next.js_API-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+
+---
+
+## 📂 Project Structure
+
+```bash
 College-Discovery-Platform/
-├── database/           # Relational Database Module
-│   ├── prisma/
-│   │   ├── schema.prisma # PostgreSQL unified schema (Merged db/backend)
-│   │   ├── seed.ts       # Seeder script loading 67 detailed colleges
-│   │   └── migrations/   # DDL SQL migration scripts
-│   ├── lib/              # Prisma client initialization
-│   └── tsconfig.json     # Database compile settings
-├── backend/            # Next.js API Services
-│   ├── app/              # API Route Handlers (colleges, saved, compare, auth)
-│   ├── lib/              # Shared logic & configs
-│   ├── services/         # Business logic layer
-│   └── prisma/           # Client schemas
-├── frontend/           # Next.js React client
-│   ├── app/              # Router pages (colleges, compare, saved, auth)
-│   ├── components/       # CollegeCard, FilterPanel, Navbar, CompareDrawer
-│   ├── store/            # Client state stores (Saved, Compare, Toast, Auth)
-│   └── lib/              # api-client.ts cache-buster & mock data
+├── database/           # Standalone Database Module
+│   ├── prisma/         # Relational database schemas & seed script
+│   └── lib/            # Prisma Client singleton instantiation
+├── backend/            # Next.js API Server
+│   ├── prisma/         # Backend schema & seed configuration
+│   ├── services/       # Core business logic layer
+│   └── app/api/        # Express-like REST API router
+├── frontend/           # Next.js React Client
+│   ├── app/            # Main application pages (Colleges, Compare, Saved)
+│   ├── components/     # Reusable UI cards, tables, search panels
+│   └── lib/            # Local data mocks and client logic
 └── README.md           # Project documentation
+```
 
-🚦 Getting Started
+---
 
-Prerequisites
-* Node.js (v18+)
-* PostgreSQL 18
+## 🚦 Getting Started
 
-Installation & Setup
-1. Clone the repository:
+### Prerequisites
+- Node.js (v18.x or newer)
+- PostgreSQL (v18.x active and listening on port `5432` with username `postgres`)
+
+### Installation & Setup
+
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/VIJAYAPANDIANT/College-Discovery-Platform.git
    cd College-Discovery-Platform
    ```
-2. Setup the Database:
+
+2. **Initialize Database Module:**
+   Provide your local PostgreSQL password in `database/.env`:
+   ```env
+   DATABASE_URL="postgresql://postgres:YOUR_PASSWORD@localhost:5432/uniscope?schema=public"
+   ```
+   Deploy the schemas and seed data:
    ```bash
    cd database
    npm install
-   # Create a .env file and set DATABASE_URL
    npx prisma db push --force-reset
    npm run db:seed
    ```
-3. Launch the Backend API Server:
+
+3. **Start Backend API Server:**
+   Configure `backend/.env` with the same connection string:
    ```bash
    cd ../backend
    npm install
    npx prisma generate
    npm run dev
    ```
-4. Launch the Frontend UI Client:
+
+4. **Start Frontend Web Application:**
+   Run the dev server using Webpack compiler mode:
    ```bash
    cd ../frontend
    npm install
-   npm run dev
+   npm run dev -- --webpack
    ```
-   *Frontend is accessible at http://localhost:3000.*
+   Access the application at `http://localhost:3000`.
 
-⚙️ Advanced Features
-* **Cache-Busting Integration**: Frontend automatically overwrites browser local storage if data changes or outdated image references are detected.
-* **Unified Database Schema**: Fully compatible schema supporting database requirements and backend server models side-by-side.
-* **Bcrypt Hashing**: User authentication passwords secured using Bcrypt hashing with a cost factor of 10.
+---
 
-🗺️ Roadmap
-* 🤖 AI College Recommender: Recommend colleges based on aptitude, fee limits, and locations.
-* 💬 Real-Time Chat Assistant: Integrated support chatbot answering admissions questions.
-* 🎓 Digital Scholarship Hub: Aggregated scholarship search engine for private/public schools.
-* 📦 PDF Resource Hub: Download prospectus and fee brochures directly from the directory.
+## ⚙️ Advanced Features
 
-👤 Contact
-Created by Vijayapandian T
+- **Unified Schema Design**: Schema models are fully compatible with both the database module specification and the Next.js API requirements.
+- **Client Cache-Busting**: The frontend includes automatic cache-busting triggers to ensure local storage databases stay updated with fixed Unsplash image links.
+- **Automatic Postgres recovery**: Decrypted saved configuration profiles to safely connect to local PostgreSQL servers.
 
-* LinkedIn: [vijayapandian-t](https://www.linkedin.com/in/vijayapandian-t/)
-* GitHub: [@VIJAYAPANDIANT](https://github.com/VIJAYAPANDIANT)
-* Email: [vijayapandian112007@gmail.com](mailto:vijayapandian112007@gmail.com)
+---
 
-If you like this project, please give it a ⭐!
+## 🗺️ Roadmap
+
+- [ ] **AI Counselor**: Chat assistant providing personalized university recommendations.
+- [ ] **Interactive Maps**: Geographic campus visualization and neighborhood discovery.
+- [ ] **Direct Applications**: Send applications directly to university enrollment registries.
+- [ ] **Digital Portfolio**: Create profiles to auto-fill registration forms.
+
+---
+
+## 👤 Contact
+
+Created by **Vijayapandian T**
+
+- **LinkedIn:** [vijayapandian-t](http://www.linkedin.com/in/vijayapandian-t)
+- **GitHub:** [@VIJAYAPANDIANT](https://github.com/VIJAYAPANDIANT)
+- **Email:** [vijayapandian112007@gmail.com](mailto:vijayapandian112007@gmail.com)
+
+---
+<div align="center">
+  <p>If you like this project, please give it a ⭐!</p>
+</div>
