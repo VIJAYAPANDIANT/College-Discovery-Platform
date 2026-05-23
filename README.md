@@ -10,16 +10,7 @@
   <img src="https://img.shields.io/badge/Prisma-6.x-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma">
 </div>
 
-<p align="center">
-  <strong>A premium, full-stack college search, discovery, and comparison platform helping students find and compare world-class universities.</strong>
-  <br />
-  <br />
-  <a href="http://localhost:3000"><strong>Local Site »</strong></a>
-  ·
-  <a href="#-getting-started">Explore the Docs</a>
-  ·
-  <a href="https://github.com/VIJAYAPANDIANT/College-Discovery-Platform/issues">Report Bug</a>
-</p>
+**UniScope** is a premium full-stack college discovery and comparison platform that helps students search, explore, compare, and analyze universities using smart filters, reviews, rankings, tuition insights, and personalized decision-making tools for better academic choices.
 
 ---
 
