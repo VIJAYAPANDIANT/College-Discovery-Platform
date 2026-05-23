@@ -1243,7 +1243,9 @@ async function main() {
   const users = [user1, user2, user3, user4, user5];
 
   // Seed Colleges, Courses, and Reviews
+  let currentRank = 0;
   for (const col of MOCK_COLLEGES) {
+    currentRank++;
     // Determine mapping values for backend requirements if not present
     const logo = col.logo || "https://images.unsplash.com/photo-1592066575517-58df903152f2?q=80&w=150&h=150&fit=crop";
     const bannerImage = col.bannerImage || col.image;
@@ -1252,7 +1254,7 @@ async function main() {
     const type = col.type || (["bits", "manipal", "vit"].includes(col.id) ? "Private" : "Public");
     const established = col.established || 1950;
     const avgPackage = col.avgPackage || (col.placementRate > 90 ? 22000 : 15000);
-    const rank = col.rank || 99;
+    const rank = col.rank || currentRank;
     const featured = col.featured || false;
     const website = col.website || `https://www.${col.id}.edu`;
     const amenities = col.amenities || ["Library", "Labs", "Gym", "Wifi"];
