@@ -16,7 +16,7 @@
   <br />
   <a href="https://college-discovery-platform-mfqh.vercel.app/"><strong>Live Frontend Website »</strong></a>
   ·
-  <a href="college-discovery-platform-nkvs-mp24sk12q.vercel.app"><strong>Live Backend API »</strong></a>
+  <a href="https://college-discovery-platform-nkvs-mp24sk12q.vercel.app/"><strong>Live Backend API »</strong></a>
   ·
   <a href="http://localhost:3000">Local Site</a>
 </p>
